@@ -1,0 +1,89 @@
+<html lang='en'>
+<head>
+  <meta charset="utf-8" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="{{ url_for('static',
+                        filename='style_find.css')}}" />
+</head>
+<body>
+  <div class="centeredcol">
+        <!DOCTYPE html>
+        <html>
+        <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+        * {
+          box-sizing: border-box;
+        }
+        
+        #myInput {
+          background-image: url('/css/searchicon.png');
+          background-position: 10px 12px;
+          background-repeat: no-repeat;
+          width: 100%;
+          font-size: 16px;
+          padding: 12px 20px 12px 40px;
+          border: 1px solid #ddd;
+          margin-bottom: 12px;
+        }
+        
+        #myUL {
+          list-style-type: none;
+          padding: 0;
+          margin: 0;
+        }
+        
+        #myUL li a {
+          border: 1px solid #ddd;
+          margin-top: -1px; /* Prevent double borders */
+          background-color: #f6f6f6;
+          padding: 12px;
+          text-decoration: none;
+          font-size: 18px;
+          color: black;
+          display: block
+        }
+        
+        #myUL li a:hover:not(.header) {
+          background-color: #eee;
+        }
+        </style>
+        </head>
+        <body>
+        
+        <h2>Select a Project</h2>
+        
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+        
+        <ul id="myUL">
+          <li><a href="#"><b>Microsoft Challenge:</b> Create a Hololens AR experience to help guide Build Day hackers from the UBC #99 bus stop to EOSC</a></li>
+          <li><a href="#"><b>TTT Challenge:</b> Using machine learning, create a face recognition app to distinguish Chris and David. </a></li>
+        
+          <li><a href="#"><b>UBC CS Challenge:</b> Using Dr Racket and text-overlay, create a meme for "Trust the Natural Recursion"</a></li>
+        </ul>
+        
+        <script>
+        function myFunction() {
+            var input, filter, ul, li, a, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("myUL");
+            li = ul.getElementsByTagName("li");
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                txtValue = a.textContent || a.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+        </script>
+        
+        </body>
+        </html>
+        
+  </div>
+</body>
+</html>

@@ -7,8 +7,10 @@
 </head>
 <body>
   <div class="centeredcol">
-    <form action="/process_query" method="post">
-      <h1>Find me a</h1>
+      <p>
+        Reply from mentor: Try closing and re-opening the app to fix the problem.
+      </p>
+      <h1>Upvote</h1>
       <div class="container">
         <input type="text" name="TextBox" id="TextBox" value="0" />
         <input type="Button" id='AddButton' value="+" />
@@ -24,14 +26,6 @@
             });
         </script>
      </div>
-      <input type="text" name="some_location"><br>
-    </form>
-    {% for resp in responses %}
-      <div class="candidate">
-        <p id="name"><b>{{ resp.name }}</b> - {{ resp.rating }} / 5</p>
-        <p id="address">{{ resp.formatted_address }}</p>
-      </div>
-    {% endfor %}
   </div>
 </body>
 </html>
