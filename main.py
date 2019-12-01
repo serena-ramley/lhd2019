@@ -8,11 +8,9 @@ import requests
 # Create the application
 app = flask.Flask(__name__)
 
-API_URL = "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?inputtype=textquery&locationbias=ipbias&fields=formatted_address,name,rating"
-
 @app.route('/')
 def hello():
-    return "Hello World!"
+    return flask.render_template('hello.html')
 
 # path parameters
 @app.route('/<name>')
@@ -23,29 +21,6 @@ def personal_hello(name):
 @app.route('/fancy/<name>')
 def some_page(name):
 	return flask.render_template('hello.html', name=name)
-
-# serving find.html
-@app.route('/find', methods=['GET'])
-def find():
-	return flask.render_template('find.html')
-
-# process query
-@app.route('/process_query', methods=['POST'])
-def process_query():
-	data = flask.request.form
-	location = data['some_location']
-	print(location)
-
-	requestString = formRequest(location)
-	responses = makeGET(requestString)['candidates']
-	return flask.render_template('find.html', responses=responses)
-
-@app.route('/button', methods=['GET','POST'])
-def button():
-	return flask.render_template('button.html')
-
-def formRequest(input):
-	return API_URL + "&key=" + readKey() + "&input=" + input
 
 @app.route('/upvote')
 def testbutton():
@@ -74,11 +49,6 @@ def makeGET(input):
 		return response
 	else:
 		return "Error: No response entered"
-
-def readKey():
-	f = open("secrets.txt", "r")
-	contents = f.read()
-	return contents.strip()
 
 if __name__ == '__main__':
     app.run(debug=True)
