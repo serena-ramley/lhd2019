@@ -98,12 +98,14 @@
               </div>
 
         <ul id="myUL">
-          <li><a href="#">
+          <li class="FilterDiv Medium"><a href="#">
                 <div class="filterDiv Medium"><b>Microsoft Challenge:</b> Create a Hololens AR experience to help guide Build Day hackers from the UBC #99 bus stop to EOSC</div></a></li>
-          <li><a href="#">
-                <div class="filterDiv Extreme"><b></b>TTT Challenge:</b> Using machine learning, create a face recognition app to distinguish Chris and David.</div> </a></li>
-        
-          <li><a href="#"><div class="filterDiv Easy"><b></b>UBC CS Challenge:</b> Using Dr Racket and text-overlay, create a meme for "Trust the Natural Recursion"</div></a></li>
+          <li class="FilterDiv Extreme"><a href="#">
+                <div class="filterDiv Extreme"><b>TTT Challenge:</b> Using machine learning, create a face recognition app to distinguish Chris and David.</div> </a></li>
+            <li class="FilterDiv Difficult"><a href="#">
+                        <div class="filterDiv Difficult"><b>e@UBC Challenge:</b> Create a platform to deliver Blue Chip Cookies across the Lower Mainland, and garner 100+ users.</div> </a></li>
+                 
+            <li class="filterDiv Easy"><a href="#"><div class="filterDiv Easy"><b>UBC CS Challenge:</b> Using Dr Racket and text-overlay, create a meme for "Trust the Natural Recursion"</div></a></li>
         </ul>
         
         <script>
@@ -133,7 +135,13 @@
           if (c == "all") c = "";
           for (i = 0; i < x.length; i++) {
             w3RemoveClass(x[i], "show");
-            if (x[i].className.indexOf(c) > -1)w3AddClass(x[i], "show");
+            if (x[i].className.indexOf(c) > -1)
+            w3AddClass(x[i], "show");
+            // if (txtValue.toUpperCase().indexOf(c) > -1) {
+            //         li[i].style.display = "";
+            //     } else {
+            //         li[i].style.display = "none";
+            //     }
           }
         }
         
@@ -142,7 +150,8 @@
           arr1 = element.className.split(" ");
           arr2 = name.split(" ");
           for (i = 0; i < arr2.length; i++) {
-            if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+            if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];
+        }
           }
         }
         
