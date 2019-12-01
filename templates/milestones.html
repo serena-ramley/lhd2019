@@ -1,0 +1,29 @@
+
+<html lang='en'>
+<head>
+    <meta charset="utf-8" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static',
+                        filename='style_find.css')}}" />
+</head>
+<body>
+<div class="centeredcol">
+    <h1> Milestones </h1>
+    <div class="container">
+
+        <input type="button" onclick="addInput()" value="click to add new milestone" >
+
+        <span id="responce"></span>
+        <script>
+            function addInput()
+            {
+                document.getElementById('responce').innerHTML+='<br/><label> Question </label></label><input type="text"  /><br/>';
+                document.getElementById('responce').innerHTML+='<br/><label> Attempt </label></label><input type="text"  /><br/>';
+                document.getElementById('responce').innerHTML+='<br/><label> Mentor Advice </label></label><input type="text"  /><br/>';
+                document.getElementById('responce').innerHTML+='<br/><label> ______________________ </label> <br/>';
+            }
+        </script>
+    </div>
+</div>
+</body>
+</html>

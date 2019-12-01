@@ -63,6 +63,10 @@ def searchfilter():
 def filter():
 	return flask.render_template('filter.html')
 
+@app.route('/milestones')
+def makeMilestone():
+    return flask.render_template('milestones.html')
+
 def makeGET(input):
 	# TODO
 	response = requests.get(input).json()
