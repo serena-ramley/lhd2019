@@ -1,5 +1,4 @@
 # MentorMe
-<br><br>
 ## Overview
 
 MentorMe is a platform for learners, professionals and recruiters to find each other through collaborative, open-source projects.
