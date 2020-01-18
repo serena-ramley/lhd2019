@@ -15,6 +15,6 @@ Looking for a designer/developer for your team? Post a project topic or explore 
 **UI/UX Preview** <br>
 https://www.figma.com/file/Rqe1fIxZquyS8PD36mW1yw/mentorMe?node-id=3%3A0
 
-*Run Code*
+*Run Code* <br>
 Run Flask server by executing python main.py in the terminal of your code editor (while at the directory in which this project is saved)
 Then, open localhost address provided in your internet browser
